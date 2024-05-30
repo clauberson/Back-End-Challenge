@@ -9,7 +9,7 @@ public class CustomException extends RuntimeException {
     private static final Logger logger = LoggerFactory.getLogger(CustomException.class);
 
 	public CustomException(String message) {
-		logger.error("CustomException: {}", message);
+//		logger.error("CustomException: {}", message);
         super(message);
     }
 }
