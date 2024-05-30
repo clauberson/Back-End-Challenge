@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.banco.exception.CustomException;
 import com.banco.model.Account;
 import com.banco.model.Customer;
 
@@ -53,7 +54,7 @@ public class AccountService {
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.postForLocation("https://run.mocky.io/v3/9769bf3a-b0b6-477a-9ff5-91f63010c9d3", document);
         } catch (Exception e) {
-            // logs
+        	new CustomException("Error send notification");
         }
     }
 
