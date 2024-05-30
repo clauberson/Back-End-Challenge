@@ -115,7 +115,7 @@ A aplicação utiliza SLF4J para logging. Os logs são configurados para diferen
 
 A aplicação utiliza H2, um banco de dados em memória, para armazenamento dos dados. A configuração do banco de dados pode ser encontrada em `src/main/resources/application.properties`.
 
-## Proposta de melhoria
+## Propostas de melhoria
 
 - A aplicação poderia ser reescrita com arquitetura de  microserviços, para que cada serviço opere individualmente, reduzindo o acoplamento.
 
