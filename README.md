@@ -42,8 +42,8 @@ Esta aplicação é um sistema de gerenciamento de clientes e contas bancárias.
 
 1. Clone o repositório para sua máquina local:
    ```sh
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git https://github.com/clauberson/Back-End-Challenge.git
+   cd Back-End-Challenge
    ```
 
 2. Compile e execute a aplicação usando Maven:
