@@ -1,6 +1,5 @@
 package com.banco.controller;
 
-import java.awt.print.Book;
 import java.math.BigDecimal;
 
 import org.slf4j.Logger;
@@ -8,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,9 +52,9 @@ public class AccountController {
 					@Content(mediaType = "application/json", schema = @Schema(implementation = Account.class)) }),
 			@ApiResponse(responseCode = "400", description = "Error creating transfer", content = @Content)})
 	@PostMapping("/transfer")
-	public ResponseEntity<Void> transfer(@RequestParam Long fromAccountId, 
+	public ResponseEntity<Void> transfer(@Parameter(description = "Origin account") @RequestParam Long fromAccountId, 
 			@Parameter(description = "Target account") @RequestParam Long toAccountId,
-			@Parameter(description = "Origin account") @RequestParam BigDecimal amount) {
+			@Parameter(description = "Amount") @RequestParam BigDecimal amount) {
 		logger.debug("Received transfer request from account {} to account {} with amount {}", fromAccountId,
 				toAccountId, amount);
 		accountService.transfer(fromAccountId, toAccountId, amount);
